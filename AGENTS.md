@@ -1,3 +1,15 @@
+# V4 UI/UX extension (2026-10-18)
+
+- Maintain the historical/legal limitation for each route. Do not render a green "approved" badge for source-list membership.
+- The app renders from `app.py`, while deterministic eligibility logic remains in `eligibility.py` (do not merge or weaken it).
+- Keep `ui_components.py` presentation-only and HTML-escape all descriptions, company names, IDs, and notes before interpolation into HTML.
+- Keep the three route options (all/general/metals); only metals checks company IDs, including in all mode.
+- Use Vazirmatn via Streamlit theme config and `assets/theme.css`; do not bundle font binaries. External font fetching requires user browser connectivity.
+- Mobile is supported by responsive CSS. Keep form controls native Streamlit, not custom JS widgets.
+- Run `python -m unittest discover -s tests -v` after edits and verify that `.streamlit/config.toml` parses as TOML.
+
+---
+
 # Codex instructions — Helios HS Eligibility Checker
 
 ## Purpose
